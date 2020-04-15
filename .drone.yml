@@ -23,6 +23,8 @@ pipeline:
       - push
   publish-ecr:
     image: croudtech/drone-docker-ecr:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
     repo: 245542037479.dkr.ecr.eu-west-2.amazonaws.com/croudtech-temp/drone-test
     registry: 245542037479.dkr.ecr.eu-west-2.amazonaws.com
     region: eu-west-2
